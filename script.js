@@ -21,7 +21,7 @@ paginazione.addEventListener("click", (e) => {
   
     const numeroPagina = parseInt(label.dataset.page);
     navigateToPage(numeroPagina);
-  });
+});
 
 // Gestore per lo swipe (touch) sulle pagine
 let startX = null;
@@ -72,21 +72,20 @@ function navigatePage(direction) {
 function navigateToPage(numeroPaginaSelezionata) {
     if (numeroPaginaSelezionata < 1 || numeroPaginaSelezionata > numPagine) return;
   
-    // Identify the previously selected label
+    // Identifica l'etichetta precedentemente selezionata
     const labelPrecedente = paginazione.querySelector(`label[data-page="${paginaCorrente}"]`);
   
-    // Remove the "lab-sel" class from the previous label
+    // Rimuovi la classe "lab-sel" dall'etichetta precedente
     labelPrecedente.classList.remove("lab-sel");
   
-    // Add the "lab-sel" class to the newly selected label
+    // Aggiungi la classe "lab-sel" all'etichetta appena selezionata
     const labelSelezionata = paginazione.querySelector(`label[data-page="${numeroPaginaSelezionata}"]`);
     labelSelezionata.classList.add("lab-sel");
   
-    // Update the current page
+    // Aggiorna la pagina corrente
     paginaCorrente = numeroPaginaSelezionata;
   
-    // Move the content of pages
+    // Sposta il contenuto delle pagine
     const offsetX = (paginaCorrente - 1) * -100;
     pagine.style.transform = `translateX(${offsetX}vw)`;
-  }
-  
+}

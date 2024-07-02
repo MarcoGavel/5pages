@@ -62,6 +62,7 @@ section#pagine{
 	width: 500vw;
 	height: 100vh;
 	display: flex;
+	transition: transform 0.8s ease-in-out;
 }
 
 section#pagine > div {
@@ -70,7 +71,7 @@ section#pagine > div {
 	justify-content: center;
 	align-items: center;
 	font-size: 2rem;
-	transition: all .8s ease-in-out;
+	
 }
 
 #page1{background-color: var(--color-page1);}
